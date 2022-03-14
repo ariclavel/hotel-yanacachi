@@ -1,0 +1,25 @@
+body {
+    padding: 20px 80px;
+    font-family:cursive;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+.hotel-title {
+    min-width: 30%;
+    height: 170px;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgb(77, 60, 17);
+    font-size: 110px;
+    margin: 0 7.5px 10px;
+    background-position: center;
+    background-size: cover;
+    border: 10px solid darkgoldenrod;
+    font-family:'Bebas Neue';
+    background-color: #9d8a0f;
+    opacity: 0.7;    
+}
