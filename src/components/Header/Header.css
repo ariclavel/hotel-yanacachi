@@ -17,8 +17,9 @@
     align-items: center;
     justify-content: flex-end;
 }
-.header .options .option {
+.option {
     padding: 10px 15px;
+    cursor: pointer;
 }
 .logo{
     height: 70%;

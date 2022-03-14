@@ -13,9 +13,20 @@
     font-weight: bolder;
     border: none;
     cursor: pointer;
+    margin: 10px;
 }
 .custom-button:hover {
     background-color: white;
     color: black;
     border: 1px solid black;
+}
+
+.google-sign-in {
+    background-color: blue;
+    color: white;
+}
+.google-sign-in:hover{
+    background-color: cornflowerblue;
+    border: none;
+
 }
