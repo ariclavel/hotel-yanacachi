@@ -8,7 +8,7 @@ import {
 import ShopPage from './pages/ShopPage/ShopPage';
 import Header from './components/Header/Header';
 import AuthenticationPage from './pages/AuthenticationPage/Authentication';
-import {auth, createUserProfileDocument} from "./Firebase/Firebase.utils";
+import {auth} from "./Firebase/Firebase.utils";
 
 const App = () => {
 

@@ -2,18 +2,13 @@ import React from "react";
 import "./Header.css";
 import { ReactComponent as Logo} from "../../Assets/simbolo.svg";
 import { Link } from 'react-router-dom';
-import { auth,signOutUser } from "../../Firebase/Firebase.utils";
 import { useContext } from "react";
 import { UserContext } from "../../Context/User";
+import { signOutUser } from "../../Firebase/Firebase.utils";
 
-const Header = ( {} ) => { 
-    const {currentUser, setCurrentUser}= useContext(UserContext);
+const Header = () => { 
+    const {currentUser}= useContext(UserContext);
     
-    const signOutHandler = async() =>{
-        await signOutUser();
-        setCurrentUser(null);
-    }
-
     return(
         <div className="header">
         <Link className="logo-container" to = "/">
@@ -28,7 +23,7 @@ const Header = ( {} ) => {
             </Link>
             {
                 currentUser ?
-                <div className="option" onClick = {signOutHandler}>
+                <div className="option" onClick = {signOutUser}>
                     SIGN OUT
                 </div>
                 :
@@ -40,7 +35,7 @@ const Header = ( {} ) => {
             
         </div>
 
-    </div>
+        </div>
 
     )
     
