@@ -6,7 +6,8 @@ import { ServicesContext } from '../../Context/Service';
 import { getByTitle } from '@testing-library/react';
 
 
-const ShopPage = () => {
+const ShopPage = ({serviceId}) => {
+    console.log(serviceId);
     const {services} = useContext(ServicesContext);
     const [enteredDate, setEnteredDate] = useState('');
     const dateChangeHandler = (event) => {
@@ -33,9 +34,9 @@ const ShopPage = () => {
             <div className='shop-page'>
                 
                 {services
-                .filter(services => services.id===2)
-                .map(({filteredId, ...otherToBookProps}) => (
-                        <ToBook key = {filteredId} { ...otherToBookProps}/>
+                .filter(service => service.id===4)
+                .map(({filterId, ...otherToBookProps}) => (
+                        <ToBook key = {4} { ...otherToBookProps}/>
                 ))}
             
             </div>

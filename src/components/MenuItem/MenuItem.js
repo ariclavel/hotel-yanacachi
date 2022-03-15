@@ -2,13 +2,15 @@ import React from 'react';
 import "./MenuItem.css";
 import {useNavigate} from "react-router-dom";
 
+
 const MenuItem = ({title, imageUrl, history, linkUrl, match}) => {
   const navigate = useNavigate();
+ 
 
   return(
     <div 
     className = "menu-item" 
-    onClick={() => navigate(`rooms`)}>  
+    onClick={() => navigate(`book`, {serviceId: 1 }  )}>  
         <div 
           style= {{backgroundImage: `url(${imageUrl})`
         }}

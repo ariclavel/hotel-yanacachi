@@ -25,6 +25,7 @@ const SignIn = () => {
   
     const signInWithGoogle = async() => {
         await signInWithGooglePopup();
+        //ir a pagina de inicio
         
     };
     const handleChange = (event) => {
@@ -37,6 +38,8 @@ const SignIn = () => {
 
         try{
             const {user} = await signInAuthUserWithEmailAndPassword(email,password);
+            //ir a pagina de inicio
+            //location.href = '/';
             resetFormFields();
 
         }catch(error){
