@@ -5,7 +5,8 @@ import {
     getAuth,
     signInWithRedirect,
     signInWithPopup,
-    GoogleAuthProvider
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword
 } from "firebase/auth";
 import { getFirestore,
     getDoc,
@@ -32,18 +33,16 @@ const firebaseConfig = {
 
   export const auth = getAuth();
   export const signInWithGooglePopup= () => signInWithPopup(auth,provider);
+
+
   export const db = getFirestore();
 
-
- 
   export const createUserDocumentFromAuth = async(userAuth) => {
-
+    //protecting code
+    if(!userAuth)return;
     const userDocRef = doc(db, "users",userAuth.uid);
     const userSnapShot = await getDoc(userDocRef);
 
-   /* if (!userAuth){
-        return;
-    }*/
     if(!userSnapShot.exists){
         console.log("no existo");
         const {displayName, email} = userAuth;
@@ -64,8 +63,13 @@ const firebaseConfig = {
     return userDocRef;
     
 };
+//this method is apart for allowing changes to the authentication without changing this
+export const createAuthUserWithEmailAndPassword = async (email,password) =>{
+    if(!email || !password)return;
 
+    return await createUserWithEmailAndPassword(auth, email, password)
 
+}
  
 
   
