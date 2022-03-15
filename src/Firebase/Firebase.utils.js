@@ -37,13 +37,13 @@ const firebaseConfig = {
 
   export const db = getFirestore();
 
-  export const createUserDocumentFromAuth = async(userAuth) => {
+  export const createUserDocumentFromAuth = async(userAuth, additionalInformation = {}) => {
     //protecting code
     if(!userAuth)return;
     const userDocRef = doc(db, "users",userAuth.uid);
     const userSnapShot = await getDoc(userDocRef);
 
-    if(!userSnapShot.exists){
+    if(!userSnapShot.exists()){
         console.log("no existo");
         const {displayName, email} = userAuth;
         const createdAt = new Date();
@@ -52,7 +52,8 @@ const firebaseConfig = {
             await setDoc(userDocRef, {
               displayName,
               email,
-              createdAt
+              createdAt,
+              ...additionalInformation
             });
 
         }catch (error){

@@ -3,7 +3,7 @@ import {useState } from "react";
 import "./SignUp.css";
 import CustomButton from "../custom-button/CustomButton";
 import FormInput from "../FormInput/FormInput";
-import {auth, createUserProfileDocument, createAuthUserWithEmailAndPassword} from "../../Firebase/Firebase.utils";
+import {auth, createUserDocumentFromAuth, createAuthUserWithEmailAndPassword} from "../../Firebase/Firebase.utils";
 
 const defaultFormFields = {
     displayName: "",
@@ -19,6 +19,10 @@ const SignUp = () => {
         setFormFields({...formFields, [name]: value});
         
     };
+    const resetFormFields = () => {
+        setFormFields(defaultFormFields);
+
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -31,23 +35,26 @@ const SignUp = () => {
         try{
             const {user} = await createAuthUserWithEmailAndPassword(email, password);
 
-            /*await createUserProfileDocument(user, {displayName});
+            await createUserDocumentFromAuth(user, { displayName });
+            resetFormFields();
 
-            this.setState({
+            /*this.setState({
                 displayName: "",
                 email: "",
                 password: "",
                 confirmPassword: ""
 
-            });
-*/
+            });*/
         }catch(error){
-            console.log("signup");
-            console.log(error);
+            if(error.code === "auth/email-already-in-use"){
+                alert("email already in use");
+            }
+            else{
+                console.log("signup");
+                console.log(error);
 
+            }
         }
-
-   /* }*/
  
     };
     
