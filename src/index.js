@@ -6,13 +6,16 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import {UserProvider} from "./Context/User";
+import {ServicesProvider} from "./Context/Service";
 
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <ServicesProvider>
+          <App />
+        </ServicesProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,

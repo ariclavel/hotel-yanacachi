@@ -8,48 +8,8 @@ import {
 import ShopPage from './pages/ShopPage/ShopPage';
 import Header from './components/Header/Header';
 import AuthenticationPage from './pages/AuthenticationPage/Authentication';
-import {auth} from "./Firebase/Firebase.utils";
 
 const App = () => {
-
- /*
-
-
-  currentUser: null
-
-  unsuscribeFromAuth = null;
-
-  const componentDidMount = ()=>{
-    this.unsuscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState( {currentUser: user});
-
-    })
-  };
-  componentWillUnmount(){
-    this.unsuscribeFromAuth = auth.onAuthStateChanged(async userAuth =>{
-      if(userAuth){
-        const userRef = await createUserProfileDocument(userAuth);
-
-        userRef.onSnapshot(snapshot =>{
-          this.setState({
-            currentUser:{
-              id: snapshot.id,
-              ...snapshot.data()
-            }
-          })
-          console.log(this.state);
-
-        });
-        
-        
-
-      }
-      this.setState( {currentUser: userAuth} );
-
-    });
-
-  }
-*/
   
   return (
     <div>

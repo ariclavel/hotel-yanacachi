@@ -1,28 +1,46 @@
 import React from 'react';
-import Book_Data from "./BookData";
 import ToBook from '../../components/ToBook/ToBook';
 import "./ShopPage.css";
+import { useState, useContext } from 'react';
+import { ServicesContext } from '../../Context/Service';
+import { getByTitle } from '@testing-library/react';
 
-class ShopPage extends React.Component{
-    constructor(props){
-        super(props);
 
-        this.state = {
-            toBook: Book_Data
+const ShopPage = () => {
+    const {services} = useContext(ServicesContext);
+    const [enteredDate, setEnteredDate] = useState('');
+    const dateChangeHandler = (event) => {
+        setEnteredDate(event.target.value);
+        // setUserInput({
+        //   ...userInput,
+        //   enteredDate: event.target.value,
+        // });
+    };
 
-        }
+    return(
+        <div className='shop-page'>
+            <div className='new-expense__control'>
+                <label>PUT THE DATE OF YOUR VISIT TO CHECK AVAILABILITY!</label>
+                <input
+                    type='date'
+                    min='2019-01-01'
+                    max='2022-12-31'
+                    onChange={dateChangeHandler}
+                    >
+                </input>
+            </div>
 
-    }
-    render(){
-        const {toBook} = this.state;
-        return(<div className='shop-page'>
-                {toBook.map(({id, ...otherToBookProps}) => (
-                        <ToBook key = {id} {...otherToBookProps}/>
+            <div className='shop-page'>
+                
+                {services
+                .filter(services => services.id===2)
+                .map(({filteredId, ...otherToBookProps}) => (
+                        <ToBook key = {filteredId} { ...otherToBookProps}/>
                 ))}
             
-        </div>);
-
-    }
+            </div>
+        </div>
+    ) 
 
 }
 export default ShopPage;
