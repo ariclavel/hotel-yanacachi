@@ -28,7 +28,7 @@ class App extends React.Component {
       this.setState( {currentUser: user});
 
     })
-  }
+  }/*
   componentWillUnmount(){
     this.unsuscribeFromAuth = auth.onAuthStateChanged(async userAuth =>{
       if(userAuth){
@@ -41,9 +41,10 @@ class App extends React.Component {
               ...snapshot.data()
             }
           })
+          console.log(this.state);
 
-        }
-        );
+        });
+        
         
 
       }
@@ -52,7 +53,7 @@ class App extends React.Component {
     });
 
   }
-
+*/
   render(){
     return (
       <div>
