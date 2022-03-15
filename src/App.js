@@ -10,25 +10,21 @@ import Header from './components/Header/Header';
 import AuthenticationPage from './pages/AuthenticationPage/Authentication';
 import {auth, createUserProfileDocument} from "./Firebase/Firebase.utils";
 
-class App extends React.Component {
+const App = () => {
 
-  constructor(){
-    super();
+ /*
 
-    this.state= {
-      currentUser: null
-    }
 
-  }
+  currentUser: null
 
   unsuscribeFromAuth = null;
 
-  componentDidMount(){
+  const componentDidMount = ()=>{
     this.unsuscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState( {currentUser: user});
 
     })
-  }/*
+  };
   componentWillUnmount(){
     this.unsuscribeFromAuth = auth.onAuthStateChanged(async userAuth =>{
       if(userAuth){
@@ -54,19 +50,17 @@ class App extends React.Component {
 
   }
 */
-  render(){
-    return (
-      <div>
-        <Header currentUser= {this.state.currentUser} />
-        <Routes>   
-          <Route exact path = "/" element = {<HomePage />}></Route>
-          <Route path = "/book" element = {<ShopPage />}></Route>
-          <Route path = "/auth" element = {<AuthenticationPage />}></Route>
-        </Routes>
-      </div>
-    );
-
-  }
+  
+  return (
+    <div>
+      <Header  />
+      <Routes>   
+        <Route exact path = "/" element = {<HomePage />}></Route>
+        <Route path = "/book" element = {<ShopPage />}></Route>
+        <Route path = "/auth" element = {<AuthenticationPage />}></Route>
+      </Routes>
+    </div>
+  );
   
 }
 

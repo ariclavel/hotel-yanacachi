@@ -3,7 +3,7 @@ import {useState } from "react";
 import "./SignUp.css";
 import CustomButton from "../custom-button/CustomButton";
 import FormInput from "../FormInput/FormInput";
-import {auth, createUserDocumentFromAuth, createAuthUserWithEmailAndPassword} from "../../Firebase/Firebase.utils";
+import {createUserDocumentFromAuth, createAuthUserWithEmailAndPassword} from "../../Firebase/Firebase.utils";
 
 const defaultFormFields = {
     displayName: "",
