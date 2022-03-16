@@ -3,7 +3,6 @@ import ToBook from '../../components/ToBook/ToBook';
 import "./ShopPage.css";
 import { useState, useContext } from 'react';
 import { ServicesContext } from '../../Context/Service';
-import { getByTitle } from '@testing-library/react';
 
 
 const ShopPage = ({serviceId}) => {

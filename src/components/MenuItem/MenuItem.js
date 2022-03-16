@@ -10,7 +10,7 @@ const MenuItem = ({title, imageUrl, history, linkUrl, match}) => {
   return(
     <div 
     className = "menu-item" 
-    onClick={() => navigate(`book`, {serviceId: 1 }  )}>  
+    onClick={() => navigate("book")}>  
         <div 
           style= {{backgroundImage: `url(${imageUrl})`
         }}

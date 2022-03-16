@@ -7,13 +7,15 @@ import {signInWithGooglePopup,
     createUserDocumentFromAuth, 
     signInAuthUserWithEmailAndPassword,
     } from "../../Firebase/Firebase.utils";
-
+import {useNavigate} from "react-router-dom";
 
 const defaultFormFields = {
     email: "",
     password: ""
 }
 const SignIn = () => {
+    const navigate = useNavigate();
+
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {email, password} = formFields;
    
@@ -40,6 +42,7 @@ const SignIn = () => {
             const {user} = await signInAuthUserWithEmailAndPassword(email,password);
             //ir a pagina de inicio
             //location.href = '/';
+            navigate(`home`);
             resetFormFields();
 
         }catch(error){

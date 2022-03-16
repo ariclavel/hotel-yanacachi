@@ -8,6 +8,7 @@ import {
 import ShopPage from './pages/ShopPage/ShopPage';
 import Header from './components/Header/Header';
 import AuthenticationPage from './pages/AuthenticationPage/Authentication';
+import ContactPage from './pages/ContactPage/ContactPage';
 
 const App = () => {
   
@@ -15,9 +16,11 @@ const App = () => {
     <div>
       <Header  />
       <Routes>   
-        <Route exact path = "/" element = {<HomePage />}></Route>
-        <Route path = "/book" element = {<ShopPage />}></Route>
-        <Route path = "/auth" element = {<AuthenticationPage />}></Route>
+        <Route exact path = "/home" element = {<HomePage />}></Route>
+        <Route path = "/home/book" element = {<ShopPage />}></Route>
+
+        <Route path = "/" element = {<AuthenticationPage />}></Route>
+        <Route path = "/contact" element = {<ContactPage />}></Route>
       </Routes>
     </div>
   );
