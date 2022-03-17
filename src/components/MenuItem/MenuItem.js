@@ -1,7 +1,7 @@
 import React from 'react';
 import "./MenuItem.css";
 
-
+//every menu services at home page
 const MenuItem = ({title, ss, imageUrl}) => {
   return(
     <div 

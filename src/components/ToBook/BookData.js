@@ -34,6 +34,46 @@ const Book_Data = [
     },
     {
       id: 2,
+      title: 'Games Area',
+      routeName: 'games',
+      imageUrl: 'https://imagekit.androidphoria.com/wp-content/uploads/Pool-3D-8-Ball.jpg',
+      items: [
+        {
+          id: 7,
+          name: 'Games hour',
+          imageUrl: 'https://th.bing.com/th/id/OIP.u5VLweZW19Hk_LKvQGbFqAHaEE?pid=ImgDet&rs=1'
+        },
+        {
+          id: 8,
+          name: 'The Whole day',
+          imageUrl: 'https://th.bing.com/th/id/OIP.DrPkUFOIBXNJzSooF-NJuAHaEs?pid=ImgDet&rs=1',
+          price: 400
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: 'Pool area',
+      routeName: 'pool',
+      imageUrl: 'https://th.bing.com/th/id/R.535259a675829fec10ae8fea95f05b31?rik=39fxQCOmbIjlaQ&riu=http%3a%2f%2fstatic.habitissimo.es%2fphotos%2fproject%2fbig%2fpiscina-rectangular-alargada_316239.jpg&ehk=0QFKvehPM0oIYxiqIrvbSwuFUHfCbB82qPU3y3Nx2e8%3d&risl=&pid=ImgRaw&r=0',
+
+      items: [
+        {
+          id: 5,
+          name: 'Pool hour',
+          imageUrl: 'https://th.bing.com/th/id/OIP.RyBssxPOEoOTa-hx5ifG-QHaFj?pid=ImgDet&rs=1',
+          price: 190
+        },
+        {
+          id: 6,
+          name: 'The whole day',
+          imageUrl: 'https://media.istockphoto.com/vectors/daylight-savings-time-graphic-with-day-and-night-landscapes-vector-id467414465?k=6&m=467414465&s=612x612&w=0&h=BpwJ8rQGJo4-OdMB13pwUKL3LgghJ96SkOdrQX4Jj0E=',
+          price: 430
+        }
+      ]
+    },
+    {
+      id: 4,
       title: 'Tours',
       routeName: 'tours',
       imageUrl: 'https://crillontours.travel/beta/wp-content/uploads/2018/07/Crillon-Tours-Full-day-excursion-to-Los-Yungas-%E2%80%93-Cotapata-National-Park-%E2%80%93-Coroico.jpg',
@@ -69,47 +109,8 @@ const Book_Data = [
           price: 45
         }
       ]
-    },
-    {
-      id: 3,
-      title: 'Pool area',
-      routeName: 'pool',
-      imageUrl: 'https://th.bing.com/th/id/R.535259a675829fec10ae8fea95f05b31?rik=39fxQCOmbIjlaQ&riu=http%3a%2f%2fstatic.habitissimo.es%2fphotos%2fproject%2fbig%2fpiscina-rectangular-alargada_316239.jpg&ehk=0QFKvehPM0oIYxiqIrvbSwuFUHfCbB82qPU3y3Nx2e8%3d&risl=&pid=ImgRaw&r=0',
-
-      items: [
-        {
-          id: 5,
-          name: 'Pool hour',
-          imageUrl: 'https://th.bing.com/th/id/OIP.RyBssxPOEoOTa-hx5ifG-QHaFj?pid=ImgDet&rs=1',
-          price: 190
-        },
-        {
-          id: 6,
-          name: 'The whole day',
-          imageUrl: 'https://media.istockphoto.com/vectors/daylight-savings-time-graphic-with-day-and-night-landscapes-vector-id467414465?k=6&m=467414465&s=612x612&w=0&h=BpwJ8rQGJo4-OdMB13pwUKL3LgghJ96SkOdrQX4Jj0E=',
-          price: 430
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: 'Games Area',
-      routeName: 'games',
-      imageUrl: 'https://imagekit.androidphoria.com/wp-content/uploads/Pool-3D-8-Ball.jpg',
-      items: [
-        {
-          id: 7,
-          name: 'Games hour',
-          imageUrl: 'https://th.bing.com/th/id/OIP.u5VLweZW19Hk_LKvQGbFqAHaEE?pid=ImgDet&rs=1'
-        },
-        {
-          id: 8,
-          name: 'The Whole day',
-          imageUrl: 'https://th.bing.com/th/id/OIP.DrPkUFOIBXNJzSooF-NJuAHaEs?pid=ImgDet&rs=1',
-          price: 400
-        }
-      ]
     }
+  
     
   ];
   

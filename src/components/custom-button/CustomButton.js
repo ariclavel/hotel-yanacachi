@@ -4,9 +4,9 @@ import "./CustomButton.css";
 //button styles reusable
 let c = ""
 const CustomButton = ( {children, isGoogleSignIn, ...otherprops} ) =>{
-    //if googleSignIn is true is a google button and style changes
-    
-    
+    //if googleSignIn is true is a google button and style changes 
+
+    //{...otherprops} all extra features and children message
     isGoogleSignIn?
         c = "google-sign-in"
     :
@@ -14,9 +14,7 @@ const CustomButton = ( {children, isGoogleSignIn, ...otherprops} ) =>{
     
     return(
 
-        <button className={c}
-            
-        {...otherprops} >
+        <button className={c} {...otherprops} >
                 {children}
         </button>
           

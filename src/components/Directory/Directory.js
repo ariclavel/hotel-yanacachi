@@ -6,12 +6,15 @@ import { useContext } from 'react';
 import {useNavigate} from "react-router-dom";
 
 const Directory = () =>  {
+  //import navigation
   const navigate = useNavigate();
-  const {services,setServices} = useContext(ServicesContext);
+  //services from data services
+  const {services} = useContext(ServicesContext);
+  //navigate to a specific service
   const selectService = ({id}) => {
     navigate(`book:${id}`);
   };
-    
+  //returning
     return (
       <div className='directory-menu'>
         {

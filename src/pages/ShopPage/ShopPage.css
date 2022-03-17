@@ -1,19 +1,25 @@
 .new-expense__control label {
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0px;
     display: block;
-    margin-top: 100px;
+    margin-top: 5px;
+    
   }
   
   .new-expense__control input {
     font: inherit;
-    padding: 0.5rem;
-    border-radius: 6px;
+    padding: 2px;
+    border-radius: 3px;
     border: 1px solid #ccc;
-    width: 20rem;
+    width: 400px;
     max-width: 100%;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 1px;
+    margin-top: 10px;
     text-align: left;
+
+  }
+  .new-expense__control{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
   

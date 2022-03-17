@@ -1,6 +1,6 @@
 import React from "react";
 import "./FormInput.css";
-
+//form input style reusable
 const FormInput = ( {handleChange, label, ...otherprops} ) => (
     <div className="group">
         <input className="form-input"
@@ -17,6 +17,7 @@ const FormInput = ( {handleChange, label, ...otherprops} ) => (
             </label>
             ) : null
         }
+        
     </div>
 
 )
