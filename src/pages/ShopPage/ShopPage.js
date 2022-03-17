@@ -5,19 +5,69 @@ import { useState, useContext } from 'react';
 import { ServicesContext } from '../../Context/Service';
 import CustomButton from '../../components/custom-button/CustomButton';
 import { useLocation } from 'react-router-dom';
+import { createReservation } from '../../Firebase/Firebase.utils';
+
+const reservationInput ={
+    enteredDate: "",
+    requiredService: [],
+    idService: ""
+}
+const arregloRequiredServices = []
 const ShopPage = ({props}) => {
+    //initialize checked , changes in ToBookItem
+    const checked = false;
+
+    //Taking state from the last page (Home)
     const {state} =useLocation();
+    reservationInput.idService = state;
     console.log(state);
+    //taking services data from context
     const {services} = useContext(ServicesContext);
     
-    const [enteredDate, setEnteredDate] = useState('');
-    const dateChangeHandler = (event) => {
-        setEnteredDate(event.target.value);
-        // setUserInput({
-        //   ...userInput,
-        //   enteredDate: event.target.value,
-        // });
+
+    //change the object
+    const [enteredService, setEnteredService] = useState(reservationInput);
+    const {enteredDate,idService, requiredService} = enteredService;
+
+    const serviceChangeHandler = (id) => {
+        setEnteredService(id);
+        arregloRequiredServices.push(id);
+        setEnteredService({
+            ...enteredService,
+            requiredService: arregloRequiredServices,
+        });
+        console.log(enteredService);
     };
+    const dateChangeHandler = (event) => {
+        console.log(event.target.value);
+        //setEnteredDate(event.target.value);
+        setEnteredService({
+           ...enteredService,
+           enteredDate: event.target.value,
+         });
+    };
+    //submit information 
+    const handleSubmit = async (event) => {
+        //prevent every default function
+        event.preventDefault();
+       
+        //try to create in BD
+        try{
+            //creating user and doc of location in BD
+            const {reservation} = await createReservation(enteredService, state, enteredDate);
+
+            //await createUserDocumentFromAuth(user, { displayName });
+            //resetFormFields();
+
+        //catching errors
+        }catch(error){
+ 
+            console.log("signup");
+            console.log(error);   
+        }
+ 
+    };
+    
 
     return(
         <div className='shop-page'>
@@ -26,7 +76,7 @@ const ShopPage = ({props}) => {
                 {services
                 .filter(service => service.id===state)
                 .map(({filterId, ...otherToBookProps}) => (
-                        <ToBook key = {state} { ...otherToBookProps}/>
+                        <ToBook key = {state} { ...otherToBookProps} addChecked = {serviceChangeHandler} />
                 ))}
             
             </div>
@@ -40,7 +90,7 @@ const ShopPage = ({props}) => {
                     >
                 </input>
             </div>
-            <CustomButton type="submit" value= "Submit Form">Check disponibility</CustomButton>
+            <CustomButton type="submit" value= "Submit Form" onClick={handleSubmit} >Check disponibility</CustomButton>
 
         </div>
     ) 

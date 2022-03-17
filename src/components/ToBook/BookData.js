@@ -60,14 +60,8 @@ const Book_Data = [
       items: [
         {
           id: 5,
-          name: 'Pool hour',
-          imageUrl: 'https://th.bing.com/th/id/OIP.RyBssxPOEoOTa-hx5ifG-QHaFj?pid=ImgDet&rs=1',
-          price: 190
-        },
-        {
-          id: 6,
           name: 'The whole day',
-          imageUrl: 'https://media.istockphoto.com/vectors/daylight-savings-time-graphic-with-day-and-night-landscapes-vector-id467414465?k=6&m=467414465&s=612x612&w=0&h=BpwJ8rQGJo4-OdMB13pwUKL3LgghJ96SkOdrQX4Jj0E=',
+          imageUrl: 'https://th.bing.com/th/id/OIP.RyBssxPOEoOTa-hx5ifG-QHaFj?pid=ImgDet&rs=1',
           price: 430
         }
       ]

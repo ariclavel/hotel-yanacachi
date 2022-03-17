@@ -44,7 +44,7 @@ const firebaseConfig = {
     const userSnapShot = await getDoc(userDocRef);
 
     if(!userSnapShot.exists()){
-        console.log("no existo");
+        //console.log("no existo");
         const {displayName, email} = userAuth;
         const createdAt = new Date();
         
@@ -80,6 +80,40 @@ export const signInAuthUserWithEmailAndPassword = async (email,password) =>{
 };
 export const signOutUser = async () => signOut(auth);
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth,callback);
+//create reservation 
+export const createReservation = async(reservation, additionalInformation = {}) => {
+ 
+     //protecting code
+     if(!reservation)return;
+     const keyId = idService+date;
+     const {id, idService, date} = reservation;
+    const reservationDocRef = doc(db, "reservations",keyId);
+    const resSnapShot = await getDoc(reservationDocRef);
+
+    if(!resSnapShot.exists()){
+        //console.log("no existo");
+        
+        
+
+        //const createdAt = new Date();
+        
+        try{
+            await setDoc(reservationDocRef, {
+                keyId,
+              id,
+              idService,
+              date,
+              ...additionalInformation
+            });
+
+        }catch (error){
+            console.log("error creating user", error.message);
+
+        }
+    }
+    return reservationDocRef;
+    
+};
 
   
 
