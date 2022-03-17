@@ -1,12 +1,26 @@
 import React from "react";
 import "./CustomButton.css";
 
-const CustomButton = ( {children, isGoogleSignIn, ...otherprops} ) => (
-    <button className= {`$ {isGoogleSignIn ? "google-sign-in" : "non"} custom-button`} 
+//button styles reusable
+let c = ""
+const CustomButton = ( {children, isGoogleSignIn, ...otherprops} ) =>{
+    //if googleSignIn is true is a google button and style changes
     
-    {...otherprops} >
-        {children}
-    </button>
+    
+    isGoogleSignIn?
+        c = "google-sign-in"
+    :
+        c= "custom-button"
+    
+    return(
 
-)
+        <button className={c}
+            
+        {...otherprops} >
+                {children}
+        </button>
+          
+    )
+
+} 
 export default CustomButton;

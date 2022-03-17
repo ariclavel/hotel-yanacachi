@@ -15,9 +15,16 @@ const Header = () => {
             <Logo className="logo"/>
         </Link>
          <div className="options">
-            <Link className="option" to = "/book">
-                BOOK HERE!
-            </Link>
+            {
+                currentUser ?
+                    
+                <Link className="option" to = "/home">
+                    BOOK HERE!
+                </Link>
+                :
+                null
+            }
+
             <Link className="option" to = "/contact">
                 CONTACT
             </Link>
