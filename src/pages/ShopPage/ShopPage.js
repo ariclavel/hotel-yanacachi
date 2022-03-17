@@ -72,10 +72,11 @@ const ShopPage = ({props}) => {
                 var i 
                 for (i=0;i<enteredService.requiredService.length;i++) { 
                     console.log("yep");
-                    const a = enteredService.requiredService[i];
-                    const keyId = idService+a+enteredDate;
+                    const required = enteredService.requiredService[i];
+                    //console.log(a);
+                    const keyId = idService+`${required}`+enteredDate;
                     //creating user and doc of location in BD
-                    await createReservation({enteredDate,idService, a, keyId});
+                    await createReservation({enteredDate,idService, required, keyId});
                 }
                 //const {reservation} = await createReservation({enteredDate,idService, requiredService});
                 //resetFormFields();

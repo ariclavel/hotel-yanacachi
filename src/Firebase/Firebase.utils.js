@@ -81,7 +81,7 @@ export const signInAuthUserWithEmailAndPassword = async (email,password) =>{
 export const signOutUser = async () => signOut(auth);
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth,callback);
 //create reservation 
-export const createReservation = async({enteredDate,idService, requiredService,keyId}) => {
+export const createReservation = async({enteredDate,idService, required,keyId}) => {
      console.log(keyId);
     // {keyId,enteredDate,idService, requiredService} = reservation;
      //if(!reservation)return;
@@ -97,7 +97,7 @@ export const createReservation = async({enteredDate,idService, requiredService,k
                 keyId,
               enteredDate,
               idService,
-              requiredService
+              required
               /*,
               ...additionalInformation*/
             });
