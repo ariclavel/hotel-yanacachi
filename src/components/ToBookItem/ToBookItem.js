@@ -1,16 +1,13 @@
 import React from "react";
 import "./ToBookItem.css";
-import { useState } from "react";
 //items of every services like type of rooms or tours
 const ToBookItem = ({id,addChecked, name, price, imageUrl}) =>{
-    const [enteredService, setEnteredService] = useState("false");
 
     const serviceChangeHandler = (event) => {
-        console.log(event.target.checked);
-        setEnteredService({enteredService: event.target.checked});
-        addChecked(id);
-        //checked = event.target.checked;
-        //console.log(enteredService); 
+        //console.log(event.target.checked);
+        //changing service with parameter of what item of service
+        //pasing true or false to the addChecked function located in SHopPage
+        addChecked(id,event.target.checked); 
     };
    
 

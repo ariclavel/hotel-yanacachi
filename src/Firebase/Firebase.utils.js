@@ -81,11 +81,12 @@ export const signInAuthUserWithEmailAndPassword = async (email,password) =>{
 export const signOutUser = async () => signOut(auth);
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth,callback);
 //create reservation 
-export const createReservation = async(reservation, additionalInformation = {}) => {
+export const createReservation = async({reservation}) => {
  
      //protecting code
+     console.log(reservation);
      if(!reservation)return;
-     const keyId = idService+date;
+   /*  const keyId = idService+date;
      const {id, idService, date} = reservation;
     const reservationDocRef = doc(db, "reservations",keyId);
     const resSnapShot = await getDoc(reservationDocRef);
@@ -110,8 +111,8 @@ export const createReservation = async(reservation, additionalInformation = {}) 
             console.log("error creating user", error.message);
 
         }
-    }
-    return reservationDocRef;
+    }*/
+    //return reservationDocRef;
     
 };
 

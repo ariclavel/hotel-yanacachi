@@ -1,11 +1,10 @@
 import React from "react";
 import ToBookItem from "../ToBookItem/ToBookItem";
 import "./ToBook.css";
-import CustomButton from "../custom-button/CustomButton";
 //elements to book in every service section
 //every section with their items (bookItems)
 const ToBook = ({title, items, addChecked}) => {
-    //console.log(checked);
+    //parameter addChecked child to child located in ShopPage
     return (  
         <div className="toBook">
             <h1 className="title">{title.toUpperCase()}</h1>

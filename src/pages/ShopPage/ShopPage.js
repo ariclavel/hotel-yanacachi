@@ -14,9 +14,6 @@ const reservationInput ={
 }
 const arregloRequiredServices = []
 const ShopPage = ({props}) => {
-    //initialize checked , changes in ToBookItem
-    const checked = false;
-
     //Taking state from the last page (Home)
     const {state} =useLocation();
     reservationInput.idService = state;
@@ -29,13 +26,24 @@ const ShopPage = ({props}) => {
     const [enteredService, setEnteredService] = useState(reservationInput);
     const {enteredDate,idService, requiredService} = enteredService;
 
-    const serviceChangeHandler = (id) => {
-        setEnteredService(id);
-        arregloRequiredServices.push(id);
-        setEnteredService({
-            ...enteredService,
-            requiredService: arregloRequiredServices,
-        });
+    const serviceChangeHandler = (id,check) => {
+        if(check ===true){
+            setEnteredService(id);
+            arregloRequiredServices.push(id);
+            setEnteredService({
+                ...enteredService,
+                requiredService: arregloRequiredServices,
+            });
+        }
+        else{
+            setEnteredService(id);
+            arregloRequiredServices.splice(arregloRequiredServices.indexOf(id),1);
+            setEnteredService({
+                ...enteredService,
+                requiredService: arregloRequiredServices,
+            });
+        }
+        
         console.log(enteredService);
     };
     const dateChangeHandler = (event) => {
@@ -45,16 +53,17 @@ const ShopPage = ({props}) => {
            ...enteredService,
            enteredDate: event.target.value,
          });
+         console.log(enteredService);
     };
     //submit information 
     const handleSubmit = async (event) => {
         //prevent every default function
         event.preventDefault();
-       
+        console.log(enteredService);
         //try to create in BD
         try{
             //creating user and doc of location in BD
-            const {reservation} = await createReservation(enteredService, state, enteredDate);
+            const {reservation} = await createReservation({enteredService});
 
             //await createUserDocumentFromAuth(user, { displayName });
             //resetFormFields();
@@ -62,7 +71,7 @@ const ShopPage = ({props}) => {
         //catching errors
         }catch(error){
  
-            console.log("signup");
+            console.log("reservation");
             console.log(error);   
         }
  
