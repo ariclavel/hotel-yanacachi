@@ -81,7 +81,7 @@ export const signInAuthUserWithEmailAndPassword = async (email,password) =>{
 export const signOutUser = async () => signOut(auth);
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth,callback);
 //create reservation 
-export const createReservation = async({enteredDate,idService, required,keyId}) => {
+export const createReservation = async({enteredDate,idService, required,keyId, nameMessage}) => {
      console.log(keyId);
     // {keyId,enteredDate,idService, requiredService} = reservation;
      //if(!reservation)return;
@@ -104,13 +104,16 @@ export const createReservation = async({enteredDate,idService, required,keyId}) 
 
         }catch (error){
             console.log("error creating reservation", error.message);
+            alert("Error making"+`(${nameMessage})` +" reservation");
 
         }
     }
     else
     {
-        alert("This service is not available on this date");
+        alert(`(${nameMessage})` +" is not available on this date");
+        return;
     }
+    alert(`(${nameMessage})` +" Reservation was succesfull");
     return reservationDocRef;
     
 };

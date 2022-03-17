@@ -71,12 +71,19 @@ const ShopPage = ({props}) => {
             try{
                 var i 
                 for (i=0;i<enteredService.requiredService.length;i++) { 
-                    console.log("yep");
                     const required = enteredService.requiredService[i];
-                    //console.log(a);
+                    //making unique id
                     const keyId = idService+`${required}`+enteredDate;
+                    
+                    //filtering services to make separate reservations
+                     let arrayFiltered = services.filter(item => item.id == idService);
+                     let nameFiltered = arrayFiltered[0].items.filter(item => item.id == required);
+                    console.log(nameFiltered[0]);  
+                    const nameMessage = nameFiltered[0].name;
+                        
+                    console.log(nameMessage);
                     //creating user and doc of location in BD
-                    await createReservation({enteredDate,idService, required, keyId});
+                    await createReservation({enteredDate,idService, required, keyId, nameMessage});
                 }
                 //const {reservation} = await createReservation({enteredDate,idService, requiredService});
                 //resetFormFields();
