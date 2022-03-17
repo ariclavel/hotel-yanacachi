@@ -22,7 +22,7 @@ const ToBookItem = ({id,addChecked, name, price, imageUrl}) =>{
             <input type="checkbox" onChange={serviceChangeHandler}></input>
             <div className="toBook-footer">
                 <span className="name"> {name} </span>
-                <span className="price"> {price} </span>
+                <span className="price"> ${price} </span>
     
             </div>
         </div>       

@@ -39,14 +39,9 @@ const Book_Data = [
       imageUrl: 'https://imagekit.androidphoria.com/wp-content/uploads/Pool-3D-8-Ball.jpg',
       items: [
         {
-          id: 7,
-          name: 'Games hour',
-          imageUrl: 'https://th.bing.com/th/id/OIP.u5VLweZW19Hk_LKvQGbFqAHaEE?pid=ImgDet&rs=1'
-        },
-        {
-          id: 8,
+          id: 5,
           name: 'The Whole day',
-          imageUrl: 'https://th.bing.com/th/id/OIP.DrPkUFOIBXNJzSooF-NJuAHaEs?pid=ImgDet&rs=1',
+          imageUrl: 'https://th.bing.com/th/id/OIP.u5VLweZW19Hk_LKvQGbFqAHaEE?pid=ImgDet&rs=1',
           price: 400
         }
       ]
@@ -59,7 +54,7 @@ const Book_Data = [
 
       items: [
         {
-          id: 5,
+          id: 6,
           name: 'The whole day',
           imageUrl: 'https://th.bing.com/th/id/OIP.RyBssxPOEoOTa-hx5ifG-QHaFj?pid=ImgDet&rs=1',
           price: 430
@@ -73,31 +68,31 @@ const Book_Data = [
       imageUrl: 'https://crillontours.travel/beta/wp-content/uploads/2018/07/Crillon-Tours-Full-day-excursion-to-Los-Yungas-%E2%80%93-Cotapata-National-Park-%E2%80%93-Coroico.jpg',
       items: [
         {
-          id: 9,
+          id: 7,
           name: 'the Inca Trail',
           imageUrl: 'https://www.boletomachupicchu.com/gutblt/wp-content/uploads/2017/09/camino-inca-machu-picchu.jpg',
           price: 25
         },
         {
-          id: 10,
+          id: 8,
           name: 'Mocori waterfalls',
           imageUrl: 'https://th.bing.com/th/id/R.4203f59924f0758c30e3ea37ba5ea2ee?rik=bGzBaacVnR539A&riu=http%3a%2f%2fdb.kookje.co.kr%2fnews2000%2fphoto%2f2013%2f0802%2f20130802.22028190125i2.jpg&ehk=Pl0NqDto%2b4nD8JjpwYXlX%2fvPoOMjgAN21%2baQ3mgQASM%3d&risl=&pid=ImgRaw&r=0',
           price: 20
         },
         {
-          id: 11,
+          id: 9,
           name: 'Chulumani village tour',
           imageUrl: 'https://th.bing.com/th/id/R.6e42194b8fefd1dfc9980ef24db3ebaa?rik=fwPllOF1MNIoVw&riu=http%3a%2f%2f3.bp.blogspot.com%2f-7Zksocg-QHQ%2fTdgwIgk2G5I%2fAAAAAAAAAVo%2fLvwVHawffIc%2fw1200-h630-p-k-no-nu%2fchulumani.JPG&ehk=Weos9ojBKHdGzAoIBUNcTua7xY1c5WHyKdCDVUPJ%2fbA%3d&risl=&pid=ImgRaw&r=0',
           price: 80
         },
         {
-          id: 12,
+          id: 10,
           name: 'Cacapi',
           imageUrl: 'https://boliviamia.net/Images/Attractionphotos/yungas-01.jpg',
           price: 80
         },
         {
-          id: 13,
+          id: 11,
           name: 'The Death Road',
           imageUrl: 'https://discovery.sndimg.com/content/dam/images/discovery/fullset/2019/12/24/0/Bolivias_Death_Road_1.jpg.rend.hgtvcom.1280.720.suffix/1577208851231.jpeg',
           price: 45

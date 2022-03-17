@@ -81,38 +81,37 @@ export const signInAuthUserWithEmailAndPassword = async (email,password) =>{
 export const signOutUser = async () => signOut(auth);
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth,callback);
 //create reservation 
-export const createReservation = async({reservation}) => {
- 
-     //protecting code
-     console.log(reservation);
-     if(!reservation)return;
-   /*  const keyId = idService+date;
-     const {id, idService, date} = reservation;
+export const createReservation = async({enteredDate,idService, requiredService,keyId}) => {
+     console.log(keyId);
+    // {keyId,enteredDate,idService, requiredService} = reservation;
+     //if(!reservation)return;
     const reservationDocRef = doc(db, "reservations",keyId);
     const resSnapShot = await getDoc(reservationDocRef);
-
+    
     if(!resSnapShot.exists()){
         //console.log("no existo");
-        
-        
-
         //const createdAt = new Date();
         
         try{
             await setDoc(reservationDocRef, {
                 keyId,
-              id,
+              enteredDate,
               idService,
-              date,
-              ...additionalInformation
+              requiredService
+              /*,
+              ...additionalInformation*/
             });
 
         }catch (error){
-            console.log("error creating user", error.message);
+            console.log("error creating reservation", error.message);
 
         }
-    }*/
-    //return reservationDocRef;
+    }
+    else
+    {
+        alert("This service is not available on this date");
+    }
+    return reservationDocRef;
     
 };
 

@@ -57,22 +57,36 @@ const ShopPage = ({props}) => {
     };
     //submit information 
     const handleSubmit = async (event) => {
+
         //prevent every default function
         event.preventDefault();
         console.log(enteredService);
-        //try to create in BD
-        try{
-            //creating user and doc of location in BD
-            const {reservation} = await createReservation({enteredService});
+        if(enteredDate==="" || !idService || enteredService.requiredService.length === 0){
+            alert("empty required values");
+            return;
+   
+        }
+        else{
+             //try to create in BD
+            try{
+                var i 
+                for (i=0;i<enteredService.requiredService.length;i++) { 
+                    console.log("yep");
+                    const a = enteredService.requiredService[i];
+                    const keyId = idService+a+enteredDate;
+                    //creating user and doc of location in BD
+                    await createReservation({enteredDate,idService, a, keyId});
+                }
+                //const {reservation} = await createReservation({enteredDate,idService, requiredService});
+                //resetFormFields();
 
-            //await createUserDocumentFromAuth(user, { displayName });
-            //resetFormFields();
+            //catching errors
+            }catch(error){
+    
+                console.log("reservation");
+                console.log(error);   
+            }
 
-        //catching errors
-        }catch(error){
- 
-            console.log("reservation");
-            console.log(error);   
         }
  
     };
