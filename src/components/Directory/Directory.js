@@ -12,7 +12,8 @@ const Directory = () =>  {
   const {services} = useContext(ServicesContext);
   //navigate to a specific service
   const selectService = ({id}) => {
-    navigate(`book:${id}`);
+    console.log({id});
+    navigate(`book:${id}`,{state:id});
   };
   //returning
     return (

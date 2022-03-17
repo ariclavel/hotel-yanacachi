@@ -4,9 +4,10 @@ import "./ShopPage.css";
 import { useState, useContext } from 'react';
 import { ServicesContext } from '../../Context/Service';
 import CustomButton from '../../components/custom-button/CustomButton';
-
-const ShopPage = ({book}) => {
-    console.log(book);
+import { useLocation } from 'react-router-dom';
+const ShopPage = ({props}) => {
+    const {state} =useLocation();
+    console.log(state);
     const {services} = useContext(ServicesContext);
     
     const [enteredDate, setEnteredDate] = useState('');
@@ -23,9 +24,9 @@ const ShopPage = ({book}) => {
               <div className='shop-page'>
                 
                 {services
-                .filter(service => service.id===book)
+                .filter(service => service.id===state)
                 .map(({filterId, ...otherToBookProps}) => (
-                        <ToBook key = {book} { ...otherToBookProps}/>
+                        <ToBook key = {state} { ...otherToBookProps}/>
                 ))}
             
             </div>
