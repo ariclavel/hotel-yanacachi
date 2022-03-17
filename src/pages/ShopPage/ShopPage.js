@@ -5,9 +5,10 @@ import { useState, useContext } from 'react';
 import { ServicesContext } from '../../Context/Service';
 
 
-const ShopPage = ({serviceId}) => {
-    console.log(serviceId);
+const ShopPage = ({book}) => {
+    console.log(book);
     const {services} = useContext(ServicesContext);
+    
     const [enteredDate, setEnteredDate] = useState('');
     const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value);
@@ -33,9 +34,9 @@ const ShopPage = ({serviceId}) => {
             <div className='shop-page'>
                 
                 {services
-                .filter(service => service.id===4)
+                .filter(service => service.id===book)
                 .map(({filterId, ...otherToBookProps}) => (
-                        <ToBook key = {4} { ...otherToBookProps}/>
+                        <ToBook key = {book} { ...otherToBookProps}/>
                 ))}
             
             </div>
