@@ -19,8 +19,8 @@ const Directory = () =>  {
     return (
       <div className='directory-menu'>
         {
-          services.map (({id,...otherSectionProps}) =>(
-            <MenuItem key={id} ss={() => selectService({id})}  {...otherSectionProps}  />
+          services.map (({id, ...otherProps}) =>(
+            <MenuItem key={id} ss={() => selectService({id})}  {...otherProps}  />
           ))
         }
       </div>
